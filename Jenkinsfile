@@ -35,7 +35,7 @@ node {
  }
  stage('Build'){
   def mvnHome = tool 'Maven-3.6'
-  def DOCKER_HOST='tcp://127.0.0.1:4243'
+  def DOCKER_HOST='tcp://10.169.151.129:2375'
   //def javahome = tool 'openjdk'
   sh("${mvnHome}/bin/mvn -B install -Dmaven.test.skip=true")
   }
