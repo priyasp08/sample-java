@@ -20,8 +20,8 @@ node {
   mailnotification = "iamvj@gmail.com"
   //javaversion = 'JDK-1.8'
   //echo("\u2600 Java version=${javaversion}")
-  branchname = "${env.BRANCH_NAME}"
-  echo("\u2600 Branch Name=${branchname}")
+  //branchname = "${env.BRANCH_NAME}"
+  //echo("\u2600 Branch Name=${branchname}")
   //sh ("git config --global user.email 'some@email.com'")
   //sh ("git config --global user.name 'jenkins'")
   //def url = sh(returnStdout: true, script: 'git config remote.origin.url').trim()
