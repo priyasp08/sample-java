@@ -6,12 +6,12 @@
   <packaging>jar</packaging>
   <version>1.0-SNAPSHOT</version>
   <name>my-app</name>
-  <!-- <properties>
+   <properties>
   <dockerfile.version>1.4.1</dockerfile.version>
   <docker.image.prefix>testproject</docker.image.prefix>
 </properties>
 
--->
+
   <url>http://maven.apache.org</url>
   <dependencies>
     <dependency>
@@ -50,7 +50,7 @@
 	</configuration>
 	</plugin>
 	<!-- Build Docker Image -->
-	<!--<plugin>
+	<plugin>
 		<groupId>com.spotify</groupId>
     		<artifactId>dockerfile-maven-plugin</artifactId>
     		<version>${dockerfile.version}</version>
@@ -64,7 +64,7 @@
       			</execution>
     		</executions>
     	<configuration>
-	<testFailureIgnore>true</testFailureIgnore>
+	<!--<testFailureIgnore>true</testFailureIgnore> -->
       	<repository>${docker.image.prefix}/${project.artifactId}</repository>
       	<buildArgs>
         	<JAR_FILE>target/${project.build.finalName}.jar</JAR_FILE>
@@ -72,7 +72,7 @@
     	</configuration>
   	</plugin>
 	
-	-->
+	
     </plugins>
   </build>
 </project>
