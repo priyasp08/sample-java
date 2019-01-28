@@ -18,35 +18,35 @@ node {
   def workspace = pwd()
   echo("\u2600 workspace=${workspace}")
   mailnotification = "iamvj@gmail.com"
-  javaversion = 'JDK-1.8'
-  echo("\u2600 Java version=${javaversion}")
+  //javaversion = 'JDK-1.8'
+  //echo("\u2600 Java version=${javaversion}")
   branchname = "${env.BRANCH_NAME}"
   echo("\u2600 Branch Name=${branchname}")
   sh ("git config --global user.email 'some@email.com'")
   sh ("git config --global user.name 'jenkins'")
   def url = sh(returnStdout: true, script: 'git config remote.origin.url').trim()
   echo("url = ${url}")
-  def mvnHome = tool 'M3'
-  def javahome = tool 'openjdk'
+  def mvnHome = tool 'Maven-3.6'
+  //def javahome = tool 'openjdk'
  }
  stage('Checkout'){
   echo "Git Checkout"
   checkout scm
  }
  stage('Build'){
-  def mvnHome = tool 'M3'
-  def javahome = tool 'openjdk'
+  def mvnHome = tool 'Maven-3.6'
+  //def javahome = tool 'openjdk'
   sh("${mvnHome}/bin/mvn -B -Dmaven.test.failure.ignore verify")
   }
  stage('SonarQube Ananlyis'){
   echo "Hi Sonar"
   withSonarQubeEnv('sonar'){
-   def mvnHome = tool 'M3'
+   def mvnHome = tool 'Maven-3.6'
    sh("${mvnHome}/bin/mvn sonar:sonar")
   }
  }
  stage('Docker Build'){
-  def mvnHome = tool 'M3'
+  def mvnHome = tool 'Maven-3.6'
   sh("${mvnHome}/bin/mvn package")
  }
  stage('Publish Image'){
