@@ -37,7 +37,7 @@ node {
   def mvnHome = tool 'Maven-3.6'
   //def DOCKER_HOST='tcp://10.169.151.129:2375'
   //def javahome = tool 'openjdk'
-  sh("${mvnHome}/bin/mvn -B install -Dmaven.test.skip=true")
+  sh("${mvnHome}/bin/mvn -B verify -Dmaven.test.skip=true")
   }
  stage('SonarQube Ananlyis'){
   echo "Hi Sonar"
