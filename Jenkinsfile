@@ -11,7 +11,7 @@ import org.jenkinsci.plugins.gitclient.GitClient;
  
 try {
 node {
- stage('Pre-Requirestion'){
+ /*stage('Pre-Requirestion'){
   properties([[$class: 'BuildDiscarderProperty',strategy: [$class: 'LogRotator', numToKeepStr: '5']],disableConcurrentBuilds(),])
   echo("All environments=${env}")
   echo("\u2600 BUILD_URL=${env.BUILD_URL}")
@@ -28,7 +28,7 @@ node {
   echo("url = ${url}")
   def mvnHome = tool 'Maven-3.6'
   //def javahome = tool 'openjdk'
- }
+ }*/
  stage('Checkout'){
   echo "Git Checkout"
   checkout scm
