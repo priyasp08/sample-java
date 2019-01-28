@@ -40,7 +40,7 @@ node {
   }
  stage('SonarQube Ananlyis'){
   echo "Hi Sonar"
-  withSonarQubeEnv('sonar'){
+  withSonarQubeEnv('sonar-6'){
    def mvnHome = tool 'Maven-3.6'
    sh("${mvnHome}/bin/mvn sonar:sonar")
   }
