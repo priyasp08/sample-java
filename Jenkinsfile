@@ -17,7 +17,7 @@ node {
   echo("\u2600 BUILD_URL=${env.BUILD_URL}")
   def workspace = pwd()
   echo("\u2600 workspace=${workspace}")
-  mailnotification = "iamvj@gmail.com"
+  mailnotification = "iampriya@gmail.com"
   //javaversion = 'JDK-1.8'
   //echo("\u2600 Java version=${javaversion}")
   //branchname = "${env.BRANCH_NAME}"
@@ -35,7 +35,7 @@ node {
  }
  stage('Build'){
   def mvnHome = tool 'Maven-3.6'
-  def DOCKER_HOST='tcp://10.169.151.129:2375'
+  //def DOCKER_HOST='tcp://10.169.151.129:2375'
   //def javahome = tool 'openjdk'
   sh("${mvnHome}/bin/mvn -B install -Dmaven.test.skip=true")
   }
