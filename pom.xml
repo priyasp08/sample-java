@@ -69,6 +69,9 @@
       	<buildArgs>
         	<JAR_FILE>target/${project.build.finalName}.jar</JAR_FILE>
       	</buildArgs>
+		
+		<serverId>MY-REGISTRY</serverId>
+        <registryUrl>https://MY_REGISTRY:443/v2/</registryUrl>
     	</configuration>
   	</plugin>
 	
