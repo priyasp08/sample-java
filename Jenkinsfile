@@ -48,12 +48,12 @@ node {
  }
  stage('Docker Build'){
   def mvnHome = tool 'Maven-3.6'
-  sh("${mvnHome}/bin/mvn clean package docker:build")
+  sh("${mvnHome}/bin/mvn package")
  }
  stage('Publish Image'){
   echo "Welclome Hub"
   def mvnHome = tool 'Maven-3.6'
-  sh("${mvnHome}/bin/mvn docker:build -DpushImage")
+  sh("${mvnHome}/bin/mvn dockerfile:push")
  }
 } // node
  
