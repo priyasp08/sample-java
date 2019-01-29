@@ -53,6 +53,7 @@ node {
  stage('Publish Image'){
   echo "Welclome Hub"
   def mvnHome = tool 'Maven-3.6'
+  sh 'docker login -u 471108 -p Priyasp*08'
   sh("${mvnHome}/bin/mvn dockerfile:push")
  }
 } // node
