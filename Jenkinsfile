@@ -48,7 +48,7 @@ node {
  }
  stage('Docker Build'){
   def mvnHome = tool 'Maven-3.6'
-  sh("${mvnHome}/bin/mvn clean docker:build")
+  sh("${mvnHome}/bin/mvn package")
  }
  stage('Publish Image'){
   echo "Welclome Hub"
