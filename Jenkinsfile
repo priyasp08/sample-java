@@ -11,41 +11,27 @@ import org.jenkinsci.plugins.gitclient.GitClient;
  
 try {
 node {
- /*stage('Pre-Requirestion'){
-  properties([[$class: 'BuildDiscarderProperty',strategy: [$class: 'LogRotator', numToKeepStr: '5']],disableConcurrentBuilds(),])
-  echo("All environments=${env}")
-  echo("\u2600 BUILD_URL=${env.BUILD_URL}")
-  def workspace = pwd()
-  echo("\u2600 workspace=${workspace}")
-  mailnotification = "iampriya@gmail.com"
-  //javaversion = 'JDK-1.8'
-  //echo("\u2600 Java version=${javaversion}")
-  //branchname = "${env.BRANCH_NAME}"
-  //echo("\u2600 Branch Name=${branchname}")
-  //sh ("git config --global user.email 'some@email.com'")
-  //sh ("git config --global user.name 'jenkins'")
-  //def url = sh(returnStdout: true, script: 'git config remote.origin.url').trim()
-  echo("url = ${url}")
-  def mvnHome = tool 'Maven-3.6'
-  //def javahome = tool 'openjdk'
- }*/
+ 
  stage('Checkout'){
   echo "Git Checkout"
   checkout scm
  }
  stage('Build'){
   def mvnHome = tool 'Maven-3.6'
-  //def DOCKER_HOST='tcp://10.169.151.129:2375'
   //def javahome = tool 'openjdk'
   sh("${mvnHome}/bin/mvn -B verify -Dmaven.test.skip=true")
   }
- stage('SonarQube Ananlyis'){
+ stage('SonarQube Analysis'){
   echo "Hi Sonar"
   withSonarQubeEnv('sonar-6'){
    def mvnHome = tool 'Maven-3.6'
    sh("${mvnHome}/bin/mvn sonar:sonar")
   }
  }
+ 
+ stage('Docker Build approval'){
+    input "Proceed For Build"
+}
  stage('Docker Build'){
   def mvnHome = tool 'Maven-3.6'
   sh("${mvnHome}/bin/mvn package")
