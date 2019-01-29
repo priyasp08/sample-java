@@ -62,7 +62,7 @@
           			<goal>push</goal>
         		</goals>
     	<configuration>
-      	<repository>${docker.image.prefix}/${project.artifactId}</repository>
+      	<repository>docker.io/${docker.image.prefix}/${project.artifactId}</repository>
 		<useMavenSettingsForAuth>true</useMavenSettingsForAuth>
       	<buildArgs>
         	<JAR_FILE>target/${project.build.finalName}.jar</JAR_FILE>
