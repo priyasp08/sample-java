@@ -8,7 +8,7 @@
   <name>my-app</name>
    <properties>
   <dockerfile.version>1.4.4</dockerfile.version>
-  <docker.image.prefix>testproject</docker.image.prefix>
+  <docker.image.prefix>471108</docker.image.prefix>
 </properties>
 
 
