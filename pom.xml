@@ -4,7 +4,7 @@
   <groupId>com.bosch.app</groupId>
   <artifactId>my-app</artifactId>
   <packaging>jar</packaging>
-  <version>1.0-SNAPSHOT</version>
+  <version>1.0</version>
   <name>my-app</name>
    <properties>
   <dockerfile.version>1.4.4</dockerfile.version>
@@ -63,6 +63,7 @@
         		</goals>
     	<configuration>
       	<repository>docker.io/${docker.image.prefix}/${project.artifactId}</repository>
+		 <tag>${project.version}</tag>
 		<useMavenSettingsForAuth>true</useMavenSettingsForAuth>
       	<buildArgs>
         	<JAR_FILE>target/${project.build.finalName}.jar</JAR_FILE>

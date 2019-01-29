@@ -29,10 +29,8 @@ node {
   }
  }
  
- stage('Docker Build approval'){
-    input "Proceed For Build"
-}
  stage('Docker Build'){
+  input "Proceed For Build"
   def mvnHome = tool 'Maven-3.6'
   sh("${mvnHome}/bin/mvn package")
  }
