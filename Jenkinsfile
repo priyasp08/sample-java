@@ -29,7 +29,7 @@ node {
   }
  stage('Publish test results') {
       junit '**/test-results/test/*.xml'
-  } }
+  } 
  
  stage('Docker Build'){
   input "Proceed For Build"
