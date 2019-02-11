@@ -27,7 +27,9 @@ node {
    def mvnHome = tool 'Maven-3.6'
    sh("${mvnHome}/bin/mvn sonar:sonar")
   }
- }
+ stage('Publish test results') {
+      junit '**/test-results/test/*.xml'
+  } }
  
  stage('Docker Build'){
   input "Proceed For Build"
