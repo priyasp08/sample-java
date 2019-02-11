@@ -125,6 +125,9 @@
            </configuration>
    </plugin>
 
+   </plugins>
+  </build>
+
     <reporting>
      <plugins>
         <plugin>
@@ -155,6 +158,6 @@
       </plugins>
    </reporting>
 
-    </plugins>
-  </build>
+   <!--    </plugins>
+  </build>-->
 </project>
