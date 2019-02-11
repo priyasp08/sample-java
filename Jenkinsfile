@@ -19,7 +19,7 @@ node {
  stage('Build'){
   def mvnHome = tool 'Maven-3.6'
   //def javahome = tool 'openjdk'
-  sh("${mvnHome}/bin/mvn -B verify -Dmaven.test.skip=true")
+  sh("${mvnHome}/bin/mvn -B test -Dmaven.test.skip=true")
   }
  stage('SonarQube Analysis'){
   echo "Hi Sonar"
