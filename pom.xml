@@ -7,8 +7,11 @@
   <version>1.0</version>
   <name>my-app</name>
    <properties>
-  <dockerfile.version>1.4.4</dockerfile.version>
-  <docker.image.prefix>471108</docker.image.prefix>
+	   <dockerfile.version>1.4.4</dockerfile.version>
+	   <docker.image.prefix>471108</docker.image.prefix>
+	    <sonar.core.codeCoveragePlugin>jacoco</sonar.core.codeCoveragePlugin>
+	    <sonar.dynamicAnalysis>reuseReports</sonar.dynamicAnalysis>
+	    <sonar.jacoco.reportPath>${project.basedir}/../target/jacoco.exec</sonar.jacoco.reportPath>
 </properties>
 
 
@@ -50,6 +53,22 @@
 	</configuration>
 	</plugin>
 	<!-- Build Docker Image -->
+
+	<plugin>
+            <groupId>org.jacoco</groupId>
+            <artifactId>jacoco-maven-plugin</artifactId>
+            <version>0.7.0.201403182114</version>
+            <executions>
+                <execution>
+                    <goals>
+                        <goal>prepare-agent</goal>
+                    </goals>
+                </execution>
+            </executions>
+            <configuration>
+                <destFile>${sonar.jacoco.reportPath}</destFile>
+            </configuration>
+        </plugin>
 	 <plugin>
 		<groupId>com.spotify</groupId>
     	<artifactId>dockerfile-maven-plugin</artifactId>
