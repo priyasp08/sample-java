@@ -6,15 +6,14 @@
   <packaging>jar</packaging>
   <version>1.0</version>
   <name>my-app</name>
-  <!--<properties>
+  <properties>
 	   <dockerfile.version>1.4.4</dockerfile.version>
 	   <docker.image.prefix>471108</docker.image.prefix>
-	   <findbugs.version>2.5.2</findbugs.version>
+	<!--   <findbugs.version>2.5.2</findbugs.version>
            <checkstyle.version>2.9.1</checkstyle.version>
            <surefire.reportplugin.version>2.12.4</surefire.reportplugin.version>
-           <cobertura.version>2.5.2</cobertura.version>
+	   <cobertura.version>2.5.2</cobertura.version> -->
 </properties>
--->
 
   <url>http://maven.apache.org</url>
   <dependencies>
