@@ -1,4 +1,12 @@
-@Library('sharedRepo') _
+@Library('sharedRepo') _ 
 proconWorkflow{
 
+	sonarqubeAnalysis = "true"
+
 }
+
+
+
+
+
+
